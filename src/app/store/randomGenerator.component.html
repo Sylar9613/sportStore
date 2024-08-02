@@ -1,0 +1,43 @@
+<div class="container-fluid">
+   <div class="row">
+      <div class="col bg-dark text-white">
+         <a class="navbar-brand">SPORTS STORE</a>
+      </div>
+   </div>
+   <div class="row mt-5">
+      <button class="btn bg-dark text-white btn-lg" [disabled]="limit" (click)="random()">
+         <i class="fa fa-random"></i>&nbsp; Elegir
+      </button>
+      <div class="col mt-2">
+         <h2 class="text-center">Estudiante: {{studentChoice}}</h2>
+      </div>
+      <div class="col mt-2">
+         <h2 class="text-center">Pregunta: {{questionChoice}}</h2>
+      </div>
+
+      <table class="table table-bordered table-striped p-2 mt-5">
+         <thead>
+            <tr>
+               <th>#</th>
+               <th>Student number</th>
+               <th class="text-right">Question</th>
+               <!-- <th>Product</th>
+               <th class="text-right">Subtotal</th> -->
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let item of blackList; let i=index">
+               <td>
+                  {{i+1}}
+               </td>
+               <td *ngIf="item.student!=0">
+                  {{item.student}}
+               </td>
+               <td>
+                  {{item.question}}
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>
